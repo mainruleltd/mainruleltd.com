@@ -24,38 +24,39 @@
 
     .page {
       width: 100%;
-      max-width: 1120px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 56px 24px 40px;
+      padding: 58px 24px 42px;
     }
 
     .top-label {
       text-align: center;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.24em;
       font-size: 14px;
       color: #38bdf8;
-      margin-bottom: 58px;
+      margin-bottom: 48px;
       font-weight: 600;
     }
 
     .hero {
       text-align: center;
-      margin-bottom: 56px;
+      margin-bottom: 36px;
     }
 
-.company {
-  font-size: 18px;
-  letter-spacing: 0.35em;
-  color: #8ec5ff;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
+    .company {
+      font-size: 18px;
+      letter-spacing: 0.35em;
+      color: #8ec5ff;
+      margin-bottom: 24px;
+      font-weight: 600;
+    }
+
     h1 {
       margin: 0 auto;
-      max-width: 920px;
-      font-size: clamp(38px, 6vw, 72px);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
+      max-width: 900px;
+      font-size: clamp(32px, 5vw, 60px);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
       color: #ffffff;
       font-weight: 700;
     }
@@ -67,41 +68,79 @@
       font-weight: 300;
     }
 
-    .chips {
-      margin: 60px auto 72px;
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: #38bdf8;
+      margin: 32px auto 0;
+      opacity: 0.85;
+    }
+
+    .features {
+      max-width: 1100px;
+      margin: 64px auto 72px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature {
+      background: rgba(10,20,40,0.55);
+      border: 1px solid rgba(56,189,248,0.38);
+      border-radius: 20px;
+      padding: 28px 24px;
+      text-align: center;
+      color: #e5e7eb;
+      font-size: 18px;
+      line-height: 1.35;
+      min-height: 120px;
       display: flex;
+      align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      max-width: 920px;
-    }
-
-    .chip {
-      padding: 14px 18px;
-      border: 1px solid rgba(148,163,184,0.25);
-      border-radius: 999px;
-      background: rgba(15,23,42,0.62);
       backdrop-filter: blur(10px);
-      color: #e2e8f0;
-      font-size: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      box-shadow:
+        0 0 20px rgba(56,189,248,0.08),
+        inset 0 0 20px rgba(56,189,248,0.03);
+      transition: all 0.25s ease;
     }
 
-    .chip.emphasis {
-      border-color: rgba(56,189,248,0.45);
-      color: #ffffff;
-      background: rgba(14,165,233,0.12);
+    .feature:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56,189,248,0.72);
+      box-shadow:
+        0 0 28px rgba(56,189,248,0.14),
+        inset 0 0 24px rgba(56,189,248,0.05);
+    }
+
+    .feature-wide {
+      grid-column: span 3;
+      max-width: 440px;
+      justify-self: center;
+      width: 100%;
     }
 
     .notice {
       margin: 0 auto;
-      max-width: 760px;
-      padding: 36px;
+      max-width: 850px;
+      padding: 42px 36px;
       text-align: center;
       border-radius: 28px;
-      background: rgba(2,6,23,0.48);
-      border: 1px solid rgba(148,163,184,0.20);
-      box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+      background: rgba(2,6,23,0.54);
+      border: 1px solid rgba(56,189,248,0.26);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.32);
+    }
+
+    .notice-symbol {
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 26px;
+      border-radius: 50%;
+      border: 1px solid rgba(56,189,248,0.55);
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
     }
 
     .notice p {
@@ -114,6 +153,7 @@
     .notice a {
       color: #38bdf8;
       text-decoration: none;
+      font-weight: 600;
     }
 
     .notice a:hover {
@@ -122,28 +162,52 @@
 
     footer {
       text-align: center;
-      margin-top: 36px;
-      font-size: 13px;
-      color: #64748b;
+      margin-top: 38px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 800px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-wide {
+        grid-column: span 1;
+        max-width: none;
+      }
     }
 
     @media (max-width: 640px) {
       .page {
-        padding-top: 40px;
+        padding: 42px 18px 32px;
       }
 
       .top-label {
-        margin-bottom: 42px;
+        margin-bottom: 38px;
+        font-size: 12px;
       }
 
-      .chips {
-        margin-top: 42px;
+      .company {
+        font-size: 15px;
+        letter-spacing: 0.24em;
       }
 
-      .chip {
-        width: 100%;
-        text-align: center;
-        border-radius: 18px;
+      h1 {
+        font-size: clamp(30px, 10vw, 42px);
+      }
+
+      .features {
+        margin: 48px auto 56px;
+      }
+
+      .feature {
+        min-height: 96px;
+        font-size: 17px;
+      }
+
+      .notice {
+        padding: 34px 24px;
       }
     }
   </style>
@@ -159,24 +223,32 @@
       <h1>We are exploring the sweet spot where portfolio management and AI intersect</h1>
 
       <div class="subtitle">Portfolio management for the digital age</div>
+      <div class="divider"></div>
     </section>
 
-    <section class="chips">
-      <div class="chip emphasis">Coherent agentic structures</div>
-      <div class="chip">Institutional grade research</div>
-      <div class="chip">360 degrees analysis</div>
-      <div class="chip">Full supply chain assessment</div>
-      <div class="chip">Market sentiment</div>
-      <div class="chip">Sector / firm idiosyncrasies</div>
-      <div class="chip">Objective reasoning</div>
-      <div class="chip">Systematic assumption challenging</div>
-      <div class="chip">Transparent rationale</div>
-      <div class="chip emphasis">Wide spectrum of targets</div>
+    <section class="features">
+      <div class="feature">Coherent agentic structures</div>
+      <div class="feature">Institutional grade research</div>
+      <div class="feature">360 degrees analysis</div>
+
+      <div class="feature">Full supply chain assessment</div>
+      <div class="feature">Market sentiment</div>
+      <div class="feature">Sector / firm idiosyncrasies</div>
+
+      <div class="feature">Objective reasoning</div>
+      <div class="feature">Systematic assumption challenging</div>
+      <div class="feature">Transparent rationale</div>
+
+      <div class="feature feature-wide">Wide spectrum of targets</div>
     </section>
 
     <section class="notice">
+      <div class="notice-symbol">⌁</div>
+
       <p>Our website is currently under development.</p>
+
       <p>Coming soon with advanced solutions for digital generation asset management.</p>
+
       <p>Please contact us at <a href="mailto:mainruleltd@gmail.com">mainruleltd@gmail.com</a></p>
     </section>
 
